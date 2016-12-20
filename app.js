@@ -23,8 +23,14 @@ app.get('/api', function(request, response) {
 });
 
 app.get('/beverages',function(request, response){
-	 var user_id = request.param('id');
-response.send(user_id);
+	 var user_id = request.param('beverage ');
+	 if("Corona"==user_id){
+			response.json({"Corona":[
+    {"Snack1":"John", "snackName":"snack deatil info"},
+    {"Snack2":"Anna", "snackName":"snack deatil info"},
+    {"Snack3":"Peter", "snackName":"snack deatil info"}
+]});
+}
 });
 
 
