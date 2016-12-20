@@ -25,12 +25,15 @@ app.get('/api', function(request, response) {
 app.get('/beverages',function(request, response){
 	 var user_id = request.param('id');
 	 if("Corona"==user_id){
+	 	 response.status(200);
 			response.json({"Corona":[
      {"snackName":"snack1", "detail":"snack deatil info"},
     {"snackName":"snack2", "detail":"snack deatil info"},
     {"snackName":"snack3", "detail":"snack deatil info"}
 			]});
-}else{response.json({"msg":"No Record Found"});}
+}else{
+ response.status(204 );
+ response.json({"msg":"No Record Found"});}
 
 
 });
