@@ -26,11 +26,11 @@ app.get('/beverages',function(request, response){
 	 var user_id = request.param('id');
 	 if("Corona"==user_id){
 			response.json({"Corona":[
-    {"Snack1":"John", "snackName":"snack deatil info"},
-    {"Snack2":"Anna", "snackName":"snack deatil info"},
-    {"Snack3":"Peter", "snackName":"snack deatil info"}
+     {"snackName":"snack1", "detail":"snack deatil info"},
+    {"snackName":"snack2", "detail":"snack deatil info"},
+    {"snackName":"snack3", "detail":"snack deatil info"}
 			]});
-}else{response.send(user_id);}
+}else{response.json({"msg":"No Record Found"});}
 
 
 });
