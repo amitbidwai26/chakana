@@ -23,7 +23,8 @@ app.get('/api', function(request, response) {
 });
 
 app.get('/beverages',function(request, response){
-response.send("ping");
+	 var user_id = request.param('id');
+response.send(user_id);
 });
 
 
