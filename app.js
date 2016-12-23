@@ -3,9 +3,9 @@ var app = express();
 //var bodyParcer = require ('bodyParcer');
 var mongoose = require ('mongoose');
 
-
-var url ='mongodb://user12:user12@ds035006.mlab.com:35006/healthapp2017'
-var db = mongoose.connect (url);
+var configDB = require('./config/database.js')
+/var url ='mongodb://user12:user12@ds035006.mlab.com:35006/healthapp2017'
+var db = mongoose.connect (config.url);
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -24,6 +24,7 @@ app.get('/api', function(request, response) {
 
 app.get('/beverages',function(request, response){
 	 var user_id = request.param('id');
+	 
 	 if("Corona"==user_id){
 	 	response.status(200);
 		response.json({"Corona":[
