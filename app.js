@@ -4,8 +4,9 @@ var app = express();
 var mongoose = require ('mongoose');
 
 var configDB = require('./config/database.js')
-/var url ='mongodb://user12:user12@ds035006.mlab.com:35006/healthapp2017'
-var db = mongoose.connect (config.url);
+// var url ='mongodb://user12:user12@ds035006.mlab.com:35006/healthapp2017'
+
+var db = mongoose.connect (configDB.url);
 
 app.set('port', (process.env.PORT || 5000));
 
